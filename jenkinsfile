@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                withMaven(maven : 'maven1'){
+                 sh 'build complete'
+                }
+        }
+      }
+        stage('Test') {
+            steps {
+                withMaven(maven : 'maven1'){
+                  sh 'test complete'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+               withMaven(maven : 'maven1'){
+                sh 'deploy completed'}
+}
+}
+}
+}
